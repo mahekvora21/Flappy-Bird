@@ -26,9 +26,9 @@ last_pipe = pygame.time.get_ticks()-pipe_frequency
 score = 0
 pass_pipe = False
 #load images
-bg=pygame.image.load('Desktop/gd/bg.png')
-gr=pygame.image.load('Desktop/gd/gr.png')
-button_img=pygame.image.load('Desktop/gd/restart.png')
+bg=pygame.image.load('bg.png')
+gr=pygame.image.load('gr.png')
+button_img=pygame.image.load('restart.png')
 
 
 def draw_text(text, font,text_col, x, y):
@@ -49,7 +49,7 @@ class Bird(pygame.sprite.Sprite):
         self.index = 0
         self.counter = 0 #conrols animation speed
         for num in range(1,4):
-            img = pygame.image.load(f'Desktop/gd/b{num}.png')
+            img = pygame.image.load(f'b{num}.png')
             self.images.append(img)
 
         self.image = self.images[self.index]
@@ -93,7 +93,7 @@ class Bird(pygame.sprite.Sprite):
 class Pipe(pygame.sprite.Sprite):
     def __init__(self, x, y, position):
         pygame.sprite.Sprite.__init__(self)
-        self.image=pygame.image.load('Desktop/gd/pipe.png')
+        self.image=pygame.image.load('pipe.png')
         self.rect=self.image.get_rect()
         #positon 1->top -1->bottom
         if position == 1:
